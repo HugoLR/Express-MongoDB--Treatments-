@@ -11,7 +11,8 @@ const api = require('./src/routes/api')
 
 //setup mongoose
 mongoose.connect('mongodb://127.0.0.1:27017/treatments-api', {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useCreateIndex: true
 })
 
 mongoose.connection.on('connected', () => {
@@ -21,6 +22,8 @@ mongoose.connection.on('connected', () => {
 
 //Middlewares
 app.use(morgan('combined'));
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 //json format
 app.set('json spaces', 2)
