@@ -42,7 +42,8 @@ const createAppointment = (body, day) => {
     treatment:body._id,
     day,
     phoneNumber: 55555555,
-    name: 'Hugo'
+    name: 'Hugo',
+    user: body.user
   })
   newAppointment
   .save()
@@ -55,7 +56,7 @@ const create = (req, res) => {
     _id: mongoose.Types.ObjectId(),
     description:req.body.description,
     listOfTreatments:req.body.listOfTreatments,
-    user: req.body.userId,
+    user: req.body.user,
     listOfAppointments: newIds.map( (day) => createAppointment(req.body, day))
 // si tenemos 5 tratamientos , se crean 5 citas
 //si tenemos 5 citas, tendremos ids que estarian en lista de citas
