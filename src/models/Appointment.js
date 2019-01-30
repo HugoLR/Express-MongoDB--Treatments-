@@ -7,7 +7,7 @@ const appointmentSchema = new Schema({
     type: String,
     required: true
   },
-  phone_number: {
+  phoneNumber: {
     type: Number,
     required: true
   },
@@ -15,8 +15,8 @@ const appointmentSchema = new Schema({
     type:String,
     required: true
   },
-  treatment: {Type: Schema.Types.ObjectId, ref:'Treatment'},
-  user: {Type: Types.Schema.Types.ObjectId, ref:'User'}
+  treatment: {type: Schema.Types.ObjectId, ref:'Treatment'},
+  user: {type: Schema.Types.ObjectId, ref:'User'}
 })
 
 module.exports = mongoose.model('Appointment', appointmentSchema)
