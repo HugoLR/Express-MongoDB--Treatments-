@@ -5,13 +5,13 @@ const chalk = require('chalk');
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const PORT = process.env.PORT || 3000;
-const MONGO_LAB = process.env.MONGO_DB_URI
+const MONGO_DB_URI = process.env.MONGO_DB_URI
 
 //Import Routes
 const api = require('./src/routes/api')
 
 //setup mongoose
-mongoose.connect(MONGO_LAB, {
+mongoose.connect(MONGO_DB_URI, {
   useNewUrlParser: true,
   useCreateIndex: true
 })
