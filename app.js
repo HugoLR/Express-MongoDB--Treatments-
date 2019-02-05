@@ -29,7 +29,7 @@ app.use(express.urlencoded({extended:true}))
 //json format
 app.set('json spaces', 2)
 
-//CORS
+//CORS, permite que puedas acceder a la version de la api 
 app.use((request, response, next) => {
   response.header("Access-Control-Allow-Origin", "*");
   response.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, Accept, Authorization");
